@@ -1,0 +1,16 @@
+{
+  "name": "COMEDORES_UGR_SCRAPER",
+  "version": "1.0.0",
+  "description": "Scraper to get UGR's restaurants daily menus",
+  "main": "index.js",
+  "scripts": {
+        "start": "node index"
+  },
+  "author": "grg121 - Francisco Navarro Morales",
+  "license": "",
+  "dependencies":{
+    "express"    : "latest",
+    "request"    : "latest",
+    "cheerio"    : "latest"
+  }
+}
