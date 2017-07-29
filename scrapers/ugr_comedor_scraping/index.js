@@ -1,5 +1,6 @@
 var request = require("request") ;
 var cheerio = require("cheerio") ;
+var fs = require('fs');
 
 // url of the page we're scraping from
 var url = "https://web.archive.org/web/20170114021707/http://scu.ugr.es/" ;
@@ -15,10 +16,11 @@ request(url, function (error, response, body) {
     var json = {"Time" : "", "Type" : "", "Data" : {
       // Daily menu
       "date":"",
-      "courses" :
-      [{"Name" : "", "Value" : "", "Allergens" : ""}]
+      "courses" : []
     }
                }
+
+    var coursejson = {"Name" : "", "Value" : "", "Allergens" : ""} ;
 
     json.Time = new Date() ;
     json.Type = "Weekly menu" ;
@@ -33,9 +35,8 @@ request(url, function (error, response, body) {
     // each day's menu.
     var child = level1.children().first() ;
     // for each <tr> in <table> in level1:
-    var j = 0 ;
+
     child.children().children().each(function(i,elem){
-      console.log("\n"+$(this).children().length) ;
 
       // in order to differenciate lines with date and lines with courses
       // we count the number of childs of each one. 2 means date (date + alergenos title)
@@ -45,21 +46,29 @@ request(url, function (error, response, body) {
         // this line contains the date.
         // we wrote previous json
         if (i != 0){
-          output[i]  = json ;
-          i++ ;
-          j = 0 ;
+          output.push(json) ;
         }
         json.Data.date = $(this).children().first().text() ;
       }else{
         var c = $(this).children().first();
-        json.Data.courses[j++].Name =  c.text() ;
-        json.Data.courses[j++].Value = c.next().text() ;
-        json.Data.courses[j++].Allergens = c.next().next().text() ;
+        coursejson.Name =  c.text() ;
+        coursejson.Value = c.next().text() ;
+        coursejson.Allergens = c.next().next().text() ;
+        json.Data.courses.push(coursejson) ;
       }
 
     });
 
-    console.log(json) ;
+    var file = "out/"+json.Time + "out.json" ;
+    for(index = 0 ; index < output.length ; ++index){
+      fs.appendFile(file, JSON.stringify(json, null, 4), function(err){
+
+                   console.log('File successfully written! - Check your project directory for the output.json file');
+
+      })
+    }
+
+
 
   } else {
     console.log("We’ve encountered an error: " + error);
