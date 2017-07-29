@@ -13,19 +13,6 @@ request(url, function (error, response, body) {
 
     // JSON structure to store data:
 
-    var json = {"Time" : "", "Type" : "", "Data" : {
-      // Daily menu
-      "date":"",
-      "courses" : []
-    }
-               }
-
-    var coursejson = {"Name" : "", "Value" : "", "Allergens" : ""} ;
-
-    json.Time = new Date() ;
-    json.Type = "Weekly menu" ;
-
-
     // load the entire body of the page.
     var $ = cheerio.load(body),
         // select divs which class is level1
@@ -35,6 +22,9 @@ request(url, function (error, response, body) {
     // each day's menu.
     var child = level1.children().first() ;
     // for each <tr> in <table> in level1:
+
+    var day ;
+
 
     child.children().children().each(function(i,elem){
 
@@ -46,22 +36,35 @@ request(url, function (error, response, body) {
         // this line contains the date.
         // we wrote previous json
         if (i != 0){
-          output.push(json) ;
+          output.push(day) ;
         }
+        var json = {Time : "", Type : "", Data : {
+          // Daily menu
+          date:"",
+          courses : []
+        }
+                   }
+
+        day = json ;
+
+        json.Time = new Date() ;
+        json.Type = "Weekly menu" ;
         json.Data.date = $(this).children().first().text() ;
+
       }else{
+        var coursejson = {Name : "", Value : "", Allergens : ""} ;
         var c = $(this).children().first();
         coursejson.Name =  c.text() ;
         coursejson.Value = c.next().text() ;
         coursejson.Allergens = c.next().next().text() ;
-        json.Data.courses.push(coursejson) ;
+        day.Data.courses.push(coursejson) ;
       }
 
     });
 
-    var file = "out/"+json.Time + "out.json" ;
+    var file = "out/"+ new Date() + "out.json" ;
     for(index = 0 ; index < output.length ; ++index){
-      fs.appendFile(file, JSON.stringify(json, null, 4), function(err){
+      fs.appendFile(file, JSON.stringify(output[index], null, 4), function(err){
 
                    console.log('File successfully written! - Check your project directory for the output.json file');
 

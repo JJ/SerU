@@ -1,0 +1,181 @@
+{
+    "Time": "2017-07-29T13:07:31.986Z",
+    "Type": "Weekly menu",
+    "Data": {
+        "date": "LUNES,  9  DE  ENERO  DE  2017  ",
+        "courses": [
+            {
+                "Name": "Primero  ",
+                "Value": "Arroz a la cubana  ",
+                "Allergens": "Apio  Huevos  Lácteos  "
+            },
+            {
+                "Name": "Segundo  ",
+                "Value": "Filete de cerdo a la parilla  ",
+                "Allergens": ""
+            },
+            {
+                "Name": "Acompañamiento  ",
+                "Value": "Ensalada mixta  ",
+                "Allergens": "Soja  "
+            },
+            {
+                "Name": "Postre  ",
+                "Value": "Naranja  ",
+                "Allergens": ""
+            },
+            {
+                "Name": "Bebida  ",
+                "Value": "Vino tinto  ",
+                "Allergens": "Sulfitos"
+            },
+            {
+                "Name": "Pan  ",
+                "Value": "Pan  ",
+                "Allergens": "Gluten  "
+            }
+        ]
+    }
+}{
+    "Time": "2017-07-29T13:07:31.993Z",
+    "Type": "Weekly menu",
+    "Data": {
+        "date": "MARTES,  10  DE  ENERO  DE  2017  ",
+        "courses": [
+            {
+                "Name": "Primero  ",
+                "Value": "Cocido  ",
+                "Allergens": ""
+            },
+            {
+                "Name": "Segundo  ",
+                "Value": "Fritura de pescado  ",
+                "Allergens": "Gluten  Pescado  "
+            },
+            {
+                "Name": "Acompañamiento  ",
+                "Value": "Ensalada hortelana  ",
+                "Allergens": ""
+            },
+            {
+                "Name": "Postre  ",
+                "Value": "Yogur  ",
+                "Allergens": ""
+            },
+            {
+                "Name": "Bebida  ",
+                "Value": "Vino tinto  ",
+                "Allergens": "Sulfitos"
+            },
+            {
+                "Name": "Pan  ",
+                "Value": "Pan  ",
+                "Allergens": "Gluten  "
+            }
+        ]
+    }
+}{
+    "Time": "2017-07-29T13:07:31.998Z",
+    "Type": "Weekly menu",
+    "Data": {
+        "date": "MIÉRCOLES,  11  DE  ENERO  DE  2017  ",
+        "courses": [
+            {
+                "Name": "Primero  ",
+                "Value": "Sopa juliana  ",
+                "Allergens": "Apio  Gluten  "
+            },
+            {
+                "Name": "Segundo  ",
+                "Value": "Plato alpujarreño  ",
+                "Allergens": "Gluten*  Huevos  "
+            },
+            {
+                "Name": "Postre  ",
+                "Value": "Plátano  ",
+                "Allergens": ""
+            },
+            {
+                "Name": "Bebida  ",
+                "Value": "Refresco  ",
+                "Allergens": ""
+            },
+            {
+                "Name": "Pan  ",
+                "Value": "Pan  ",
+                "Allergens": "Gluten  "
+            }
+        ]
+    }
+}{
+    "Time": "2017-07-29T13:07:32.000Z",
+    "Type": "Weekly menu",
+    "Data": {
+        "date": "JUEVES,  12  DE  ENERO  DE  2017  ",
+        "courses": [
+            {
+                "Name": "Primero  ",
+                "Value": "Pizza  ",
+                "Allergens": "Gluten  Lácteos  Soja  Sulfitos"
+            },
+            {
+                "Name": "Segundo  ",
+                "Value": "Ternera a la carbonara  ",
+                "Allergens": "Apio  Gluten  Sulfitos"
+            },
+            {
+                "Name": "Acompañamiento  ",
+                "Value": "Patatas a la española  ",
+                "Allergens": "Gluten*  "
+            },
+            {
+                "Name": "Postre  ",
+                "Value": "Piña  ",
+                "Allergens": ""
+            },
+            {
+                "Name": "Bebida  ",
+                "Value": "Vino tinto ",
+                "Allergens": "Sulfitos"
+            },
+            {
+                "Name": "Pan  ",
+                "Value": "Pan  ",
+                "Allergens": "Gluten  "
+            }
+        ]
+    }
+}{
+    "Time": "2017-07-29T13:07:32.003Z",
+    "Type": "Weekly menu",
+    "Data": {
+        "date": "VIERNES,  13  DE  ENERO  DE  2017  ",
+        "courses": [
+            {
+                "Name": "Primero  ",
+                "Value": "Estofado de lentejas  ",
+                "Allergens": "Gluten*  "
+            },
+            {
+                "Name": "Segundo  ",
+                "Value": "Pechuga de pollo empanada  ",
+                "Allergens": "Gluten  Huevos  Lácteos  "
+            },
+            {
+                "Name": "Acompañamiento  ",
+                "Value": "Pisto manchego  ",
+                "Allergens": "Gluten*  "
+            },
+            {
+                "Name": "Postre  ",
+                "Value": "Manzana  ",
+                "Allergens": ""
+            },
+            {
+                "Name": "Bebida  ",
+                "Value": "Vino tinto  ",
+                "Allergens": "Sulfitos"
+            }
+        ]
+    }
+}
