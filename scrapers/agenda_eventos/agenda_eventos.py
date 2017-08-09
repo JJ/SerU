@@ -4,6 +4,10 @@ from bs4 import BeautifulSoup
 import json
 import sys
 
+# Add UTF8 support
+reload(sys)
+sys.setdefaultencoding('UTF8')
+
 '''
 The definition of the JSON object would be:
 {
@@ -31,11 +35,11 @@ def obtainRawElements():
     times = []
 
     for element in raw_times:
-        times.append(element.get_text().lstrip())
+        times.append(element.get_text().strip())
 
     for element in raw_titles_hrefs:
-        hrefs.append(str(element.get('href')).lstrip())
-        titles.append(str(element.get_text()).lstrip())
+        hrefs.append(str(element.get('href')).strip())
+        titles.append(str(element.get_text()).strip())
 
     return (titles, times, hrefs)
 
