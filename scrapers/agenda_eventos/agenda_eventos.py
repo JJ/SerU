@@ -1,11 +1,8 @@
+# -*- coding: utf-8 -*-
 import requests
 from bs4 import BeautifulSoup
 import json
 import sys
-
-# Change encoding to UTF8
-reload(sys)
-sys.setdefaultencoding('UTF8')
 
 # Obtain the news objects.
 
