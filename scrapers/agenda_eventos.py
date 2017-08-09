@@ -34,3 +34,15 @@ The definition of the JSON object would be:
     href: hyperlink of the event,
 };
 '''
+
+number_of_elements = len(titles)
+data = []
+for i in range(number_of_elements):
+    obj = {"title":titles[i], "date":times[i], "href":hrefs[i]}
+    data.append(obj)
+
+json_obj = json.dumps(data, ensure_ascii=False)
+
+sys.stdout.write(json_obj)
+sys.stdout.flush()
+sys.exit(0)
