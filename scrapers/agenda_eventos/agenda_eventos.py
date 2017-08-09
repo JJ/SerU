@@ -37,14 +37,29 @@ def obtainRawElements():
         hrefs.append(str(element.get('href')).lstrip())
         titles.append(str(element.get_text()).lstrip())
 
-number_of_elements = len(titles)
-data = []
-for i in range(number_of_elements):
-    obj = {"title":titles[i], "date":times[i], "href":hrefs[i]}
-    data.append(obj)
+    return (titles, times, hrefs)
 
-json_obj = json.dumps(data, ensure_ascii=False)
+# Creates JSON object and returns it.
+def createJSON(titles, times, hrefs):
 
-sys.stdout.write(json_obj)
-sys.stdout.flush()
-sys.exit(0)
+    number_of_elements = len(titles)
+    data = []
+    for i in range(number_of_elements):
+        obj = {"title":titles[i], "date":times[i], "href":hrefs[i]}
+        data.append(obj)
+
+    json_obj = json.dumps(data, ensure_ascii=False)
+
+    return (json_obj)
+
+# Main function of the script.
+def main():
+    (titl,hr,tim) = obtainRawElements()
+    json_obj = createJSON(titl,hr,tim)
+
+    sys.stdout.write(json_obj)
+    sys.stdout.flush()
+    sys.exit(0)
+
+# Calls main.
+main()
