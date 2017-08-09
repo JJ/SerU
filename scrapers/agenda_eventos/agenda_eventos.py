@@ -21,7 +21,7 @@ The definition of the JSON object would be:
 EVENTS_LINK = "https://canal.ugr.es/agenda/semana/"
 
 # Returns a tuple with the titles, hrefs and dates.
-def obtainRawElements():
+def obtainEvents():
 
     # Obtain the news objects.
     news_channel = requests.get(EVENTS_LINK)
@@ -58,7 +58,7 @@ def createJSON(titles, times, hrefs):
 
 # Main function of the script.
 def main():
-    (titl,hr,tim) = obtainRawElements()
+    (titl,hr,tim) = obtainEvents()
     json_obj = createJSON(titl,hr,tim)
 
     sys.stdout.write(json_obj)
