@@ -26,5 +26,11 @@ for element in raw_titles_hrefs:
     hrefs.append(str(element.get('href')).lstrip())
     titles.append(str(element.get_text()).lstrip())
 
-for element in titles:
-    print(titles)
+'''
+The definition of the JSON object would be:
+{
+    title: title of the event,
+    date: date of the event,
+    href: hyperlink of the event,
+};
+'''
