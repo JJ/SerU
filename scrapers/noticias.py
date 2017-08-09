@@ -16,4 +16,4 @@ raw_titles_hrefs = news_channel_soup.find_all(class_="title-evento-semana text-b
 raw_times = news_channel_soup.find_all(class_="event-schedule-detail text-medium text-color-dark-grey")
 
 for element in raw_times:
-    print(element)
+    times.append(element.get_text().lstrip())
